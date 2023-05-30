@@ -1,0 +1,48 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: #000000;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: rgb(0, 0, 0);
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: rgb(19,57,191);
+    color: white;
+  }
+
+.mitte {
+    align-items: center;
+    text-align: center;
+}
+
+.unterkatigorie {
+    text-align: center;
+    background-color: rgb(19,57,191);
+    color: white;
+    border-radius: 9px;
+    padding: 2,5rem;
+}
+
+body {
+  background-color: rgb(197, 197, 197);
+}
