@@ -1,0 +1,288 @@
+/* Stylesheet für Selfhtml Design 07
+  responsives Grid Layout  ab Z. 247 */
+
+/* ====================================================  GLOBAL DEFINITION  ==================================================== */
+
+/* alternatives Boxmodell */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font: normal 1em Arial, sans-serif;
+  color: black;
+  background-color: #ddd;
+}
+
+/* ====================================================  HEADER  ==================================================== */
+
+header #logo {
+  display: inline-block;
+  text-shadow: none;
+  color: transparent;
+  background: url(../img/logo.png);
+  background-size: contain;
+  width: 2em;
+  height: 2em;
+}
+
+header h1 {
+  text-align: center;
+}
+
+header span {
+  display: block;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+#site_logo p,
+#site_logo a {
+  color: #EEE;
+}
+
+/****************** Navigation *********************/
+#main-nav li {
+  list-style-type: none;
+}
+
+#main-nav a {
+  padding: 0.5em 1em;
+  display: inline-block;
+  font-weight: bold;
+  color: white;
+  width: 7em;
+  text-decoration: none;
+}
+
+#main-nav a:focus,
+#main-nav a:hover,
+#main-nav a:active {
+  color: rgb(0, 153, 255);
+  text-decoration: underline;
+}
+
+#main-nav a[aria-current=page] {
+  color: #000;
+  border-radius: 1em;
+  background: #6ca0ff radial-gradient(ellipse at center, #2704ee 0%, #00aeff 100%);
+}
+
+#main-nav a[aria-current=page]:hover,
+#main-nav a[aria-current=page]:focus,
+#main-nav a[aria-current=page]:active {
+  color: rgb(17, 0, 255);
+  text-decoration: underline;
+  background: black;
+}
+
+/* Slider, wird über seine Landmark-Role selektiert */
+
+[role=banner] {
+  position: relative;
+}
+
+[role=banner] h2,
+[role=banner] .slide_slogan {
+  text-align: center;
+}
+
+[role=banner] img {
+  float: left;
+  margin-right: 2em;
+}
+
+/*   allgemeine Einstellungen   */
+
+a {
+  color: #09c;
+  transition: all 0.3s ease;
+}
+
+a:focus,
+a:hover,
+a:active {
+  color: #f0893e;
+}
+
+[title] {
+  cursor: help;
+}
+
+a [title],
+a[title] {
+  cursor: pointer;
+}
+
+table {
+  margin: 15px 0;
+  border: 1px solid #355E64;
+  border-collapse: collapse;
+}
+
+/* Eingabefelder */
+input[type="text"] {
+  padding: 8px;
+  width: 90%;
+  font-size: .9em;
+  border: 1px solid #DDDDDD;
+  background: linear-gradient(#FFFFFF, #EEEEEE);
+  border-radius: 3px;
+  box-shadow: 0 0 2px #DDDDDD;
+}
+
+input[type="text"]:hover {
+  border: 1px solid #cccccc;
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 0 2px #002fff;
+}
+
+input[type="submit"] {
+  padding: 5px 10px;
+  color: #fff;
+  cursor: pointer;
+  font: italic bold 1em/1.2 Georgia, "Times New Roman ", Times, Cambria, "Nimbus Roman No9 L ", serif;
+  border: 1px solid #e35061;
+  background: #c50a1f;
+  border-radius: 3px;
+}
+
+input:hover[type="submit"] {
+  border-color: #999;
+}
+
+
+
+
+
+
+/* ------------------------ Layout ---------------------------------*/
+header {
+  display: grid;
+  grid-template-columns: 1fr [main-links] 8em [nav-end] minmax(10em, 75em) [main-rechts] 1fr;
+  background: black;
+  color: white;
+}
+
+header h1 {
+  grid-column: nav-end / main-rechts;
+}
+
+header #main-nav {
+  grid-column: main-links/ nav-end;
+  grid-row: 1 /2;
+}
+
+header [role=banner] {
+  grid-column: main-links / main-rechts;
+  grid-row: 2/3;
+  background: #0400ff linear-gradient(-42deg, #2600ff, #12b7bd, #0f00e4);
+  padding: 1em 3em;
+  margin: 0 3em;
+}
+
+/* main */
+main,
+footer {
+  max-width: 75em;
+  padding: 2em;
+  margin: 0 auto;
+}
+
+main {
+  background: #fefefe;
+}
+
+#index main {
+  margin-top: -2em;
+}
+
+
+@media only screen and (min-width: 40em) {
+
+  main,
+  footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media only screen and (min-width: 60em) {
+
+  main,
+  footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* Inhalt */
+article {
+  grid-column: 1 / -1;
+}
+
+article img {
+  float: left;
+  margin-right: 2em;
+  width: 25%;
+}
+
+aside h2 {
+  color: #606261;
+}
+
+aside dt {
+  margin: 1.5em 0;
+  font-size: 1.1em;
+}
+
+aside dd {
+  margin: 1.5em 0;
+  font-style: italic;
+  font-size: .9em;
+}
+
+aside ul {
+  margin: 30px 0;
+  font-size: .9em;
+}
+
+aside li {
+  margin: 20px 0;
+  padding-left: 25px;
+}
+
+
+dl.grid {
+  display: grid;
+  grid-template-columns: 1fr 100%;
+}
+
+dd {
+  margin: 0;
+  padding-left: 1em;
+}
+
+dl.grid dd {
+  margin-bottom: 1em;
+}
+
+a[href^="tel"] {
+  white-space: nowrap;
+}
+
+
+
+
+/* Drucklayout  */
+@media print {}
+
+/*   print ends */

@@ -1,0 +1,202 @@
+/*
+ * jQuery FlexSlider v2.0
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ */
+
+ /*
+  * Ich verstehe garnichts. scheint wichig zu sein
+  *
+  *
+  *
+ /* Aussehen der Flexbox schnell anpassen */
+ 
+         /* Slider */
+        #slider {
+          margin:20px auto 0;
+          max-width:945px;
+          min-height:340px;
+          position:relative;
+          z-index:5;
+          border:8px solid #FFF;
+          background: #f1da36;
+          box-shadow: 0 14px 19px -6px #858585; 
+          background: radial-gradient(ellipse at center, #f1da36 0%,#e48100 100%);
+        }
+        
+        .slides li {
+            width: 941px; 
+            min-height:340px;
+            background:transparent url('../img/modal.png') no-repeat;
+        }
+        
+                .no-js #slider {
+                  height:auto !important;
+                }
+                .no-js .slides li {
+                  display:block !important;
+                  height:340px;
+                }
+                
+        .slides li#flexslide_2 {
+             background:transparent url('../img/modal.png') no-repeat;
+        }
+        #slider h1, 
+        #slider p {          
+          padding:0 15px 0 320px;
+          text-align:center;
+        }
+        #slider h1{ 
+          margin-top:50px;         
+          font-size:2.5em;
+          text-transform:uppercase;
+        }
+        #slider p {   
+          margin-top:7px;   
+          padding:0 100px 0 360px;    
+          color:#F9F9F9;
+          font-size:.85em;
+          letter-spacing:0;
+          line-height:150%;
+        }
+        #slider p.slide_slogan {   
+          padding-left:360px;
+          font-size:1.05em;
+          font-weight:bold;
+          text-transform:uppercase;
+        }
+        #slider p span {
+           margin:25px 0 0;
+           float:right;
+           display:block;
+           overflow:hidden;
+           font-size:1.4em;
+           font-weight:bold;
+           text-transform:uppercase;
+           border:1px solid #999a9c;
+           background: #ffffff;
+           border-radius:5px;
+           background: linear-gradient(to bottom, #ffffff 0%,#ffffff 50%,#e5e5e5 100%);
+        }
+        #slider p a {
+           padding:10px 0 10px 15px;
+           float:right;
+           display:block;
+           transition: all 0.3s ease;   
+        }        
+        #slider p span a:after {
+           padding:10px 10px 10px 10px;
+           margin:0 0 0 15px;
+           content:"»";
+           font-size:1.6em;
+           background: #e4eae1;
+           background: linear-gradient(to bottom, #e4eae1 0%,#dfe5d7 34%,#b3bead 100%);
+        }
+ 
+ 
+.flex-control-paging li a { 
+    background: #bbb; 
+    border:1px solid #999;
+}
+.flex-control-paging li a:hover { 
+    background: #CCC; 
+}
+
+.flex-control-paging li a.flex-active { 
+    background: #EEE; 
+    cursor: default; 
+}
+.flex-direction-nav a {
+   color:#BBB;       
+}
+.flex-direction-nav a:focus,
+.flex-direction-nav a:hover,
+.flex-direction-nav a:active {
+   color:#EEE;       
+}
+
+
+/* */
+.flexslider {
+  overflow:hidden;
+}
+/* Browser Resets */
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+
+/* FlexSlider Necessary Styles
+*********************************/ 
+.flexslider {margin: 0; padding: 0;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+html[xmlns] .slides {display: block;} 
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+
+/* FlexSlider Default Theme
+*********************************/
+.flexslider {margin: 0 0 60px; background: #fff; border: 4px solid #fff; position: relative; -webkit-border-radius: 4px; -moz-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,.2);}
+.flex-viewport {max-height: 2000px; transition: all 1s ease;}
+.loading .flex-viewport {max-height: 300px;}
+.flexslider .slides {zoom: 1;}
+
+.carousel li {margin-right: 5px}
+
+
+/* Direction Nav */
+.flex-direction-nav {*height: 0;}
+.flex-direction-nav a {
+          margin: 0; 
+          display: block;  
+          position: absolute; top: 30%; z-index: 10; cursor: pointer; 
+          text-indent: -9999px; 
+          text-decoration:none;
+          opacity: .5; 
+          transition: all .3s ease;}
+.flex-direction-nav a:before {position:absolute;top:0;right:5px;text-indent:0;font-size:6em; color:#333;}
+.flex-direction-nav .flex-prev:before {content: "‹";left:5px;}
+.flex-direction-nav .flex-next:before {content: "›";}
+
+
+.flex-direction-nav .flex-next {right: .5em; }
+.flex-direction-nav .flex-prev {left: .5em;}
+.flexslider:hover .flex-next {opacity: 0.8; right: 5px;}
+.flexslider:hover .flex-prev {opacity: 0.8; left: 5px;}
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover {opacity: 1;}
+.flex-direction-nav .flex-disabled {opacity: .3!important; cursor: default;}
+
+/* Control Nav */
+.flex-control-nav {width: 100%; position: absolute; bottom: 0; text-align: center;}
+.flex-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline; width:12px !important; }
+.flex-control-paging li a {width: 11px; height: 11px; display: block; cursor: pointer; text-indent: -9999px; border-radius: 20px;}
+
+/* Control thumbs */
+.flex-control-thumbs {margin: 5px 0 0; position: static; overflow: hidden;}
+.flex-control-thumbs li {width: 25%; float: left; margin: 0;}
+.flex-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
+.flex-control-thumbs img:hover {opacity: 1;}
+.flex-control-thumbs .flex-active {opacity: 1; cursor: default;}
+
+@media screen and (max-width: 860px) {
+  .flex-direction-nav .flex-prev {opacity: 1; left: 0;}
+  .flex-direction-nav .flex-next {opacity: 1; right: 0;}
+}
